@@ -1,9 +1,9 @@
-import {signUp, getUsers} from "@/controllers/users.controllers";
+import { signUp, getUsers } from "@/controllers/users.controllers";
 import { Router } from "express";
 
-const router = Router()
+const participantsRouter = Router()
 
-router.post('/participants', signUp);
-router.get('/participants', getUsers);
+participantsRouter.post('/participants', signUp);
+participantsRouter.get('/participants', getUsers);
 
-export default router;
+export { participantsRouter };
