@@ -1,15 +1,5 @@
 import faker, { fakerEN_GB } from "@faker-js/faker"
 
-class NewParticipant {
-    name: string;
-    balance: number;
-
-    constructor({ name, balance }: { name: string, balance: number }) {
-        this.name = name;
-        this.balance = balance;
-
-    }
-}
 
 export function createNewValidParticipant(isValid: boolean = true) {
 

@@ -13,7 +13,7 @@ beforeAll(async () => {
     await cleanDB()
 })
 
-describe("/api", () => {
+describe("/PARTICIPANTS", () => {
 
     it("should /POST a new user at '/participants'", async () => {
 
