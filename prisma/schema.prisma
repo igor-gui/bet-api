@@ -15,7 +15,8 @@ model User {
   createdAt String @db.VarChar(255)
   updatedAt String @db.VarChar(255)
   name      String @db.VarChar(255)
-  balance   Int    @db.Integer()
+  balance   Int    @default(0)
+  Bet       Bet[]
 
   @@map("users")
 }
@@ -29,6 +30,22 @@ model Game {
   homeTeamScore Int     @default(0)
   awayTeamScore Int     @default(0)
   isFinished    Boolean @default(false)
+  Bet           Bet[]
 
   @@map("games")
+}
+
+model Bet {
+  id            Int    @id @default(autoincrement())
+  createdAt     String @db.VarChar(255)
+  updatedAt     String @db.VarChar(255)
+  homeTeamScore Int    @default(0)
+  awayTeamScore Int    @default(0)
+  amountBet     Int    @default(0)
+  gameId        Int
+  participantId Int
+  status        String @default("PENDING")
+  amountWon     Int?
+  Game          Game   @relation(fields: [gameId], references: [id])
+  User          User   @relation(fields: [participantId], references: [id])
 }

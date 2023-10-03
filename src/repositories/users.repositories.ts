@@ -6,8 +6,12 @@ async function createUser(user: UserParams) {
     return await prisma.user.create({ data: { ...user, createdAt: currentTime, updatedAt: currentTime } })
 }
 
-async function findUsers(){
+async function findUsers() {
     return await prisma.user.findMany({})
+}
+
+async function findUserById(id: number) {
+    return await prisma.user.findFirst({ where: { id } })
 }
 
 const usersRepositories = {
