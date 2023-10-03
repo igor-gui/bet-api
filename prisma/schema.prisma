@@ -19,3 +19,16 @@ model User {
 
   @@map("users")
 }
+
+model Game {
+  id            Int     @id @default(autoincrement())
+  createdAt     String  @db.VarChar(255)
+  updatedAt     String  @db.VarChar(255)
+  homeTeamName  String  @db.VarChar(255)
+  awayTeamName  String  @db.VarChar(255)
+  homeTeamScore Int     @default(0)
+  awayTeamScore Int     @default(0)
+  isFinished    Boolean @default(false)
+
+  @@map("games")
+}
