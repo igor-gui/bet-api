@@ -37,3 +37,7 @@ npm run dev
 </p>
 
 <p>Lembrando que o "balance" precisa ser maior que 1000</p>
+
+
+## Deploy:
+https://bet-api-l240.onrender.com
